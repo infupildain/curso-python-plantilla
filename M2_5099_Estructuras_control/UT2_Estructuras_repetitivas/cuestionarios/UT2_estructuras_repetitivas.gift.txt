@@ -1,0 +1,31 @@
+// Banco de preguntas M2 · UT2 Estructuras repetitivas (prueba de integración)
+// Importar en Moodle: Banco de preguntas > Importar > formato GIFT (codificación UTF-8)
+
+$CATEGORY: $course$/M2 Estructuras de control/UT2 Estructuras repetitivas
+
+::UT2-01 for-else::¿Cuándo se ejecuta el bloque <code>else</code> de un bucle <code>for</code>? {
+=Cuando el for termina sin haber ejecutado break
+~Cuando la condición del for es falsa desde el principio, y solo entonces
+~Siempre, después de la última vuelta
+~Cuando se ejecuta un break
+}
+
+::UT2-02 range::¿Cuántas veces se repite el cuerpo de <code>for intento in range(1, 8)\:</code>? {#7}
+
+::UT2-03 break en match::Un <code>break</code> escrito dentro de un <code>case</code> sale del bucle while que contiene al match. {T}
+
+::UT2-04 Validar antes de convertir::¿Qué expresión permite comprobar que el texto <code>"doce"</code> no se puede convertir con int() sin usar try/except? {
+=texto.isdecimal()
+~int(texto) \=\= texto
+~texto.lower()
+~len(texto) > 0
+}
+
+::UT2-05 Comprensión con filtro::¿Qué devuelve <code>[n for n in [3, 8, 5, 1] if n >\= 5]</code>? {
+=[8, 5]
+~[3, 8, 5, 1]
+~[True, False]
+~2
+}
+
+::UT2-06 Mínimo clásico::En el algoritmo clásico de mínimo, la variable del mínimo debe inicializarse con 0 antes de recorrer la lista. {F#Se inicializa con el primer elemento: con 0 fallaría si todos los valores son positivos.}

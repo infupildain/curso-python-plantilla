@@ -1,0 +1,3 @@
+pytest>=8.0
+pytest-timeout>=2.3   # corta un test si el programa se queda colgado en un bucle infinito
+markdown>=3.5         # solo para herramientas/empaquetar_moodle.py

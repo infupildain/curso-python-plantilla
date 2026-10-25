@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Entornos virtuales
+.venv/
+venv/
+
+# PyCharm (se comparte solo el código, no la configuración local)
+.idea/
+
+# Paquete generado para Moodle (lo crea herramientas/empaquetar_moodle.py)
+dist/
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,34 @@
+# Ejecuta los tests de todos los ejercicios en cada push y pull request.
+# - Repo del profesor (hay carpetas solucion/): comprueba que las soluciones pasan los tests.
+# - Repo del alumno (sin solucion/): comprueba el código que ha escrito el alumno.
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: ¿Repo del profesor o del alumno?
+        run: |
+          if find . -type d -name solucion | grep -q .; then
+            echo "USAR_SOLUCION=1" >> "$GITHUB_ENV"
+            echo "Modo PROFESOR: se prueban las soluciones" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Modo ALUMNO: se prueba el código entregado" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Ejecutar tests
+        run: pytest
